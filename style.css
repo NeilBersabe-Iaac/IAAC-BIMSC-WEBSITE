@@ -72,11 +72,41 @@ body{
     background-color:rgb(15, 15, 15);
 }
 
+/* Images & HOVER */
 .imgItem{
     object-fit:contain;
     object-position: ;
-    
+    height: 100%;
 }
+.imgTextA{
+    object-fit:contain;
+    object-position: ;
+    Width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;    
+}
+.imgTextA1{
+    object-fit:contain;
+    object-position: ;
+    Width: 100%;
+    opacity: 0;
+     
+
+}
+.grid-itemA:hover .imgItemA {
+    opacity: 0.2;
+  }
+.grid-itemA:hover .imgTextA {
+    opacity: 0;
+  }
+.grid-itemA:hover .imgTextA1 {
+    opacity: 1;
+  }
+
+
+
+/* Image TEXTS */
 .imgTextA{
     position:absolute;
     top: 80%;
@@ -84,6 +114,14 @@ body{
     font-size: 30px;
     font-family: Raj;
     color: #fff;
+}
+.imgTextA1{
+    position:absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: darkorange;
 }
 .imgTextB{
     position: absolute;
@@ -125,7 +163,7 @@ body{
     font-family: Raj;
     color: #fff;
 }
-
+/* HOVER IMAGE SETTINGS*/
 
 
 
