@@ -1,0 +1,175 @@
+
+@font-face {
+    font-family: Raj;
+    src: url(fonts/Rajdhani-Regular.ttf);
+}
+
+/*   Body Edits */
+/*--------------------------*/
+body{
+    background-color: rgb(15, 15, 15);
+    font-family: Raj;
+    line-height: 1.2em;
+    color: rgb(185, 185, 185);
+    margin: 0%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    }
+
+/*   CSS Grids */
+/*--------------------------*/
+.grid-container{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    /* grid-template-rows: 30% 30% 30% ; */
+    grid-gap: 1px;
+}
+.grid-column1{
+    align-items: center;
+    grid-gap: 1px;
+    padding: 100px;
+}
+.grid-column2{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:33vh 33vh 33vh;
+    background-color: #333333;
+    grid-gap: 1px;
+    padding: 1px;
+    grid-template-areas: 
+    "itemA itemD"
+    "itemB itemE"
+    "itemC itemF";
+}
+.grid-itemA{
+    grid-area: itemA;
+    position: relative;
+    background-color:rgb(15, 15, 15);
+}
+.grid-itemB{
+    grid-area: itemB;
+    position: relative;
+    background-color:rgb(15, 15, 15);
+}
+.grid-itemC{
+    grid-area: itemC;
+    position: relative;
+    background-color:rgb(15, 15, 15);
+}
+.grid-itemD{
+    grid-area: itemD;
+    position: relative;
+    background-color:rgb(15, 15, 15);
+}
+.grid-itemE{
+    grid-area: itemE;
+    position: relative;
+    background-color:rgb(15, 15, 15);
+}
+.grid-itemF{
+    grid-area: itemF;
+    position: relative;
+    background-color:rgb(15, 15, 15);
+}
+
+.imgItem{
+    object-fit:contain;
+    object-position: ;
+    
+}
+.imgTextA{
+    position:absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: #fff;
+}
+.imgTextB{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: #fff;
+}
+.imgTextC{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: #fff;
+}
+.imgTextD{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: #fff;
+}
+.imgTextE{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: #fff;
+}
+.imgTextF{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    font-family: Raj;
+    color: #fff;
+}
+
+
+
+
+/*   Navigation Bar */
+/*--------------------------*/
+    /* .topnav{
+        background-color: #333;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .topnav a{
+        float: left;
+        color: ghostwhite;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18;
+        font-family: 'Bebas Neue', cursive; 
+    }
+    .topnav a:hover{
+        background-color: darkorange;
+        color:#333;
+        
+    } */
+/*   Body Edits Labels */
+/*--------------------------*/
+h1{
+    font-family: Raj, cursive;
+    color: darkorange;
+    border: orange;
+}
+h3{
+    font-family: 'Bebas Neue', cursive;
+    color: darkorange;
+}
+
+footer{
+    font-size: small;
+    font-family: Raj;
+    color: ghostwhite;
+}
+a{
+    color: orange;
+}
+
+/**/
