@@ -122,6 +122,10 @@ body{
 .grid-itemC:hover .imgItem2a {
     opacity: 1;
   }
+.grid-itemC:hover .imgTextC {
+    opacity: 0;
+    transition: .5s ease;
+  }
 
 
 
@@ -141,7 +145,7 @@ body{
     left: 5%;
     font-size: 30px;
     font-family: Raj;
-    color:  rgb(15, 15, 15);
+    color:  rgb(255, 255, 255);
 }
 .imgTextB{
     position: absolute;
