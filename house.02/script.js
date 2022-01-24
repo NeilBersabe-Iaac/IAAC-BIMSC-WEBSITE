@@ -27,6 +27,8 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.module.js'
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/controls/OrbitControls.js'
 import { Rhino3dmLoader } from 'https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/loaders/3DMLoader.js'
+import { HDRCubeTextureLoader } from 'https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/loaders/HDRCubeTextureLoader.js';
+
 
 let camera, scene, raycaster, renderer, selectedMaterial
 const mouse = new THREE.Vector2()
@@ -43,11 +45,13 @@ function init() {
     scene = new THREE.Scene()
     scene.background = new THREE.Color(1,1,1)
     camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
-    camera.position.y = - 100
+    camera.position.y = - 30
+    camera.position.x = -18
+    camera.position.z = 10
 
     // create the renderer and add it to the html
     renderer = new THREE.WebGLRenderer( { antialias: true } )
-    renderer.setSize( window.innerWidth, window.innerHeight )
+    renderer.setSize(window.innerWidth, window.innerHeight)
     document.body.appendChild( renderer.domElement )
 
     const controls = new OrbitControls( camera, renderer.domElement )
@@ -55,17 +59,33 @@ function init() {
     const directionalLight = new THREE.DirectionalLight( 0xffffff )
     directionalLight.position.set( 0, 0, 2 )
     directionalLight.castShadow = true
-    directionalLight.intensity = 2
+    directionalLight.intensity = 0
     scene.add( directionalLight )
 
-    const directionalLight2 = new THREE.DirectionalLight( 0xffffff )
-    directionalLight2.position.set( 0, 0, -2 )
-    directionalLight2.castShadow = true
-    directionalLight2.intensity = 2
-    scene.add( directionalLight2 )
+    const light = new THREE.HemisphereLight( 0xffffff, 0x000000, 1 );
+    scene.add( light );
+    // const directionalLight2 = new THREE.DirectionalLight( 0xffffff )
+    // directionalLight2.position.set( 2, -20, 0 )
+    // directionalLight2.castShadow = true
+    // directionalLight2.intensity = .5
+    // scene.add( directionalLight2 )
 
-    selectedMaterial = new THREE.MeshStandardMaterial( {color: 'yellow'} )
+//////////////////////////////
+//MATERIALS
+let material, cubeMap
 
+cubeMap = new THREE.CubeTextureLoader()
+    .setPath('./images/')
+    .load( [ 'px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png' ] )
+
+
+scene.background = cubeMap
+// material.envMap = scene.background
+
+///////////////////////////////
+
+
+    selectedMaterial = new THREE.MeshStandardMaterial( {color: 'darkorange'} )
     raycaster = new THREE.Raycaster()
 
     const loader = new Rhino3dmLoader()
@@ -172,14 +192,7 @@ function onClick( event ) {
 
         document.body.appendChild( container )
     }
-    cubeMap = new THREE.CubeTextureLoader()
-    .setPath('textures/cube/Bridge2/')
-    .load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] )
 
-    
-
-scene.background = cubeMap
-material.envMap = scene.background
 
 }
 

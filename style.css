@@ -26,20 +26,20 @@ body{
 }
 .grid-column1{
     align-items: center;
-    grid-gap: 1px;
+    grid-gap: 0px;
     padding: 100px;
 }
 .grid-column2{
     display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows:33vh 33vh 33vh;
+    grid-template-columns: 60% 40%;
+    grid-template-rows:33vh 33vh 34vh;
     background-color: #333333;
-    grid-gap: 1px;
-    padding: 1px;
+    grid-gap: 0px;
+    padding: 0px;
     grid-template-areas: 
-    "itemA itemD"
-    "itemB itemE"
-    "itemC itemF";
+    "itemA itemC"
+    "itemB itemB"
+    "itemB itemB";
 }
 .grid-itemA{
     grid-area: itemA;
@@ -90,10 +90,13 @@ body{
     object-fit:contain;
     object-position: ;
     Width: 100%;
-    opacity: 0;
-     
+    opacity: 0;     
 
 }
+/* .houseItem{
+    object-fit: fill;
+} */
+
 .grid-itemA:hover .imgItemA {
     opacity: 0.2;
   }
@@ -113,7 +116,8 @@ body{
     left: 5%;
     font-size: 30px;
     font-family: Raj;
-    color: #fff;
+    font-style: ;
+    color: rgb(15, 15, 15);
 }
 .imgTextA1{
     position:absolute;
@@ -125,11 +129,11 @@ body{
 }
 .imgTextB{
     position: absolute;
-    top: 80%;
+    top: 90%;
     left: 5%;
     font-size: 30px;
     font-family: Raj;
-    color: #fff;
+    color: rgb(15, 15, 15);
 }
 .imgTextC{
     position: absolute;
@@ -137,7 +141,7 @@ body{
     left: 5%;
     font-size: 30px;
     font-family: Raj;
-    color: #fff;
+    color: rgb(15, 15, 15);
 }
 .imgTextD{
     position: absolute;
@@ -197,7 +201,7 @@ h1{
     border: orange;
 }
 h3{
-    font-family: 'Bebas Neue', cursive;
+    font-family: Raj, cursive;
     color: darkorange;
 }
 
