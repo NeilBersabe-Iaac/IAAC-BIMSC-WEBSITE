@@ -23,7 +23,7 @@
 //
 //------------------------------------------
 
-// Import libraries
+///// Import libraries
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.module.js'
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/controls/OrbitControls.js'
 import { Rhino3dmLoader } from 'https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/loaders/3DMLoader.js'
@@ -31,6 +31,7 @@ import { HDRCubeTextureLoader } from 'https://cdn.jsdelivr.net/npm/three@0.124.0
 
 
 let camera, scene, raycaster, renderer, selectedMaterial
+const model = '../house02/script.js'
 const mouse = new THREE.Vector2()
 window.addEventListener( 'click', onClick, false);
 
@@ -67,6 +68,8 @@ function init() {
 
     const light = new THREE.AmbientLight( 0x404040 ); // soft white light
     scene.add( light );
+
+
     // const directionalLight2 = new THREE.DirectionalLight( 0xffffff )
     // directionalLight2.position.set( 2, -20, 0 )
     // directionalLight2.castShadow = true
@@ -86,6 +89,20 @@ scene.background = cubeMap
 // material.envMap = scene.background
 
 ///////////////////////////////
+// const grass = new THREE.TextureLoader()
+//     grass.setPath('./materials/grass/')
+//     material = new THREE.MeshPhysicalMaterial()
+//     material.map          = grass.load('stylized-grass1_albedo.png')
+//     material.aoMmap       = grass.load('stylized-grass1_ao.png')
+//     material.normalMap    = grass.load('stylized-grass1_normal-ogl.png')
+//     material.metalness = 0.0
+//     material.roughness = 0.2
+
+
+
+
+
+//////////////////////////////
 
 
     selectedMaterial = new THREE.MeshStandardMaterial( {color: 'darkorange'} )
