@@ -62,7 +62,10 @@ function init() {
     directionalLight.intensity = 0
     scene.add( directionalLight )
 
-    const light = new THREE.HemisphereLight( 0xffffff, 0x000000, 1 );
+    const domelight = new THREE.HemisphereLight( 0xffffff, 0x000000, 2 );
+    scene.add( domelight );
+
+    const light = new THREE.AmbientLight( 0x404040 ); // soft white light
     scene.add( light );
     // const directionalLight2 = new THREE.DirectionalLight( 0xffffff )
     // directionalLight2.position.set( 2, -20, 0 )
