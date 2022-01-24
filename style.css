@@ -27,7 +27,7 @@ body{
 .grid-column1{
     align-items: center;
     grid-gap: 0px;
-    padding: 100px;
+    padding: 80px;
 }
 .grid-column2{
     display:grid;
